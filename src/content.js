@@ -42,8 +42,9 @@ export const home = {
   intro:
     'Holistic education from Nursery through Secondary School, in a nurturing environment that builds academic excellence and sound moral values.',
   // TODO: replace with a real Attarbiyah photo. 4:5 portrait works best in the arch frame.
-  image: img('1649386525679-214da4fa6676', 1100),
-  imageAlt: 'A young pupil reading at her classroom desk',
+  image:
+    'https://images.unsplash.com/photo-1774870292182-d59afbebf09e?auto=format&fit=crop&crop=focalpoint&fp-x=0.53&fp-y=0.5&w=1100&h=1375&q=75',
+  imageAlt: 'A young pupil in a blue hijab school uniform among her classmates',
   stats: [
     { value: `${new Date().getFullYear() - 1987}+`, label: 'Years of service' },
     { value: '5', label: 'Schools in one family' },
