@@ -41,7 +41,9 @@ export const home = {
   title: 'Empowering the community through knowledge and faith',
   intro:
     'Holistic education from Nursery through Secondary School, in a nurturing environment that builds academic excellence and sound moral values.',
-  image: img('1523240795612-9a054b0db644', 1600),
+  // TODO: replace with a real Attarbiyah photo. 4:5 portrait works best in the arch frame.
+  image: img('1649386525679-214da4fa6676', 1100),
+  imageAlt: 'A young pupil reading at her classroom desk',
   stats: [
     { value: `${new Date().getFullYear() - 1987}+`, label: 'Years of service' },
     { value: '5', label: 'Schools in one family' },

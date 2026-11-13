@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           <div className="hero__media rise" style={{ animationDelay: '200ms' }}>
             <div className="arch">
-              <img src={home.image} alt="Students learning together" fetchPriority="high" />
+              <img src={home.image} alt={home.imageAlt} fetchPriority="high" />
             </div>
             <div className="hero__badge">
               <strong>{school.founded}</strong>
