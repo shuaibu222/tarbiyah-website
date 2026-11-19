@@ -6,7 +6,7 @@ import Icon from '../components/Icon.jsx';
 import CallToAction from '../components/CallToAction.jsx';
 import { schools, school } from '../content.js';
 
-const mapQuery = encodeURIComponent('Hotoro, Nassarawa, Kano, Nigeria');
+const mapQuery = encodeURIComponent(school.mapQuery);
 
 export default function Schools() {
   return (

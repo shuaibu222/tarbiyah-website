@@ -1,2 +1,5 @@
 node_modules
 dist
+
+# Private documents for the school (not published)
+docs/

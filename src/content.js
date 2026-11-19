@@ -10,6 +10,8 @@ export const school = {
   founded: 1987,
   tagline: 'Nurturing excellence since 1987',
   address: 'Hotoro Area, Nassarawa Local Government, Kano State, Nigeria',
+  mapQuery: 'Hotoro, Nassarawa, Kano, Nigeria', // TODO confirm: exact campus pin
+  statement: 'Rooted in Hotoro. Guided by faith. Open to every learner.',
   phones: ['08132136338', '08039423419', '08039712069', '08068893617'],
   email: 'aicollege98@yahoo.com',
   officeHours: '8am – 6pm, Friday to Thursday',
