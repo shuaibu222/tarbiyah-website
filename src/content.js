@@ -28,7 +28,8 @@ export const nav = [
   { to: '/about', label: 'About' },
   { to: '/schools', label: 'Our Schools' },
   { to: '/admissions', label: 'Admissions' },
-  { to: '/news', label: 'Events & News' },
+  // Hidden for now. To bring it back, restore this line and the route in App.jsx:
+  // { to: '/news', label: 'Events & News' },
 ];
 
 export const hours = [

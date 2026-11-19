@@ -6,7 +6,6 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Schools from './pages/Schools.jsx';
 import Admissions from './pages/Admissions.jsx';
-import News from './pages/News.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
@@ -25,7 +24,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/schools" element={<Schools />} />
           <Route path="/admissions" element={<Admissions />} />
-          <Route path="/news" element={<News />} />
+          {/* Events & News is hidden for now: src/pages/News.jsx is kept for later. */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
