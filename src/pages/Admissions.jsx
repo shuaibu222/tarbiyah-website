@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero.jsx';
 import Section from '../components/Section.jsx';
 import Reveal from '../components/Reveal.jsx';
 import Accordion from '../components/Accordion.jsx';
-import { admissions, school } from '../content.js';
+import { admissions, school, prettyPhone } from '../content.js';
 
 const naira = (n) => `₦${n.toLocaleString('en-NG')}`;
 
@@ -75,10 +75,18 @@ export default function Admissions() {
         <p className="note">{admissions.feesNote}</p>
       </Section>
 
-      <Section tone="soft" eyebrow="Questions" title="Frequently asked">
-        <Reveal className="narrow">
-          <Accordion items={admissions.faq} />
-        </Reveal>
+      <Section tone="soft">
+        <div className="faq">
+          <Reveal className="section-head">
+            <p className="eyebrow">Questions</p>
+            <h2>Frequently asked</h2>
+            <p className="lead">Still unsure? Call the office on{' '}
+              <a href={`tel:${school.phones[0]}`} className="inline-link">{prettyPhone(school.phones[0])}</a>.</p>
+          </Reveal>
+          <Reveal delay={80}>
+            <Accordion items={admissions.faq} />
+          </Reveal>
+        </div>
       </Section>
     </>
   );

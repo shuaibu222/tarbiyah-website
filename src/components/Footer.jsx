@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowUp } from 'lucide-react';
 import Logo from './Logo.jsx';
-import { school, nav, hours } from '../content.js';
-
-// 08132136338 -> 0813 213 6338
-const prettyPhone = (p) => p.replace(/^(\d{4})(\d{3})(\d{4})$/, '$1 $2 $3');
+import { school, nav, hours, prettyPhone } from '../content.js';
 
 export default function Footer() {
   const [mainPhone, ...otherPhones] = school.phones;

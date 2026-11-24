@@ -23,6 +23,9 @@ export const school = {
   ],
 };
 
+// 08132136338 -> 0813 213 6338
+export const prettyPhone = (p) => p.replace(/^(\d{4})(\d{3})(\d{4})$/, '$1 $2 $3');
+
 export const nav = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },

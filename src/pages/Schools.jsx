@@ -4,7 +4,7 @@ import Section from '../components/Section.jsx';
 import Reveal from '../components/Reveal.jsx';
 import Icon from '../components/Icon.jsx';
 import CallToAction from '../components/CallToAction.jsx';
-import { schools, school } from '../content.js';
+import { schools, school, prettyPhone } from '../content.js';
 
 const mapQuery = encodeURIComponent(school.mapQuery);
 
@@ -38,7 +38,12 @@ export default function Schools() {
         <Reveal className="campus">
           <div className="campus__info">
             <p><MapPin size={20} aria-hidden="true" /> {school.address}</p>
-            <p><Phone size={20} aria-hidden="true" /> {school.phones.join(', ')}</p>
+            <p>
+              <Phone size={20} aria-hidden="true" />
+              <span className="campus__phones">
+                {school.phones.map((p) => <a key={p} href={`tel:${p}`}>{prettyPhone(p)}</a>)}
+              </span>
+            </p>
             <a
               className="btn btn--primary"
               href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
