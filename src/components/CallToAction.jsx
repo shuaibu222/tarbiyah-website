@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Reveal from './Reveal.jsx';
-import Pattern from './Pattern.jsx';
 import { school, prettyPhone } from '../content.js';
 
 export default function CallToAction() {
@@ -9,8 +8,8 @@ export default function CallToAction() {
     <section className="section section--cta">
       <div className="container">
         <Reveal className="cta">
-          <Pattern />
           <div>
+            <p className="eyebrow eyebrow--light">Admissions</p>
             <h2>Give your child a foundation of knowledge and faith</h2>
             <p>Admissions are open for Nursery, Primary and Secondary.</p>
           </div>

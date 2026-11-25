@@ -12,28 +12,28 @@ export default function Admissions() {
     <>
       <PageHero
         eyebrow="Admissions"
-        title="Join our community"
+        title={<>A new chapter.<br /><em>A shared future.</em></>}
         intro="Begin your child’s journey with Attarbiyah. Five simple steps from first visit to first day."
       >
         <a href={`tel:${school.phones[0]}`} className="btn btn--gold">Call the admissions office</a>
       </PageHero>
 
-      <Section eyebrow="How it works" title="Admission in five steps">
+      <section className="section admission-journey"><div className="container admission-journey__layout">
+        <div className="admission-journey__intro"><p className="eyebrow">How it works</p><h2>A thoughtful start.<br /><em>Five simple steps.</em></h2><p className="lead">We’re here to help you through each stage, from your first conversation to your child’s first day.</p></div>
         <ol className="steps">
           {admissions.steps.map((s, i) => (
             <Reveal as="li" key={s.title} className="step" delay={i * 70}>
-              <span className="step__num">{i + 1}</span>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
+              <span className="step__num">0{i + 1}</span>
+              <div><h3>{s.title}</h3><p>{s.text}</p></div>
             </Reveal>
           ))}
         </ol>
-      </Section>
+      </div></section>
 
       <Section tone="soft" eyebrow="What to bring" title="Requirements">
-        <div className="cards cards--3">
+        <div className="requirements-grid">
           {admissions.requirements.map((r, i) => (
-            <Reveal key={r.level} className="card" delay={i * 80}>
+            <Reveal key={r.level} className="requirement" delay={i * 80}>
               <h3>{r.level}</h3>
               <ul className="checklist">
                 {r.items.map((item) => (
@@ -45,7 +45,7 @@ export default function Admissions() {
         </div>
       </Section>
 
-      <Section eyebrow={`Academic year ${admissions.feesYear}`} title="Fees per term">
+      <Section eyebrow={`Academic year ${admissions.feesYear}`} title="A clear view of the fees">
         <Reveal className="table-wrap">
           <table className="fees">
             <thead>

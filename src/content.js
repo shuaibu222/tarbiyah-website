@@ -1,4 +1,4 @@
-// All site text and data lives here. Edit this file to change what the site says.
+// Shared site content. Page-specific editorial copy lives with each page.
 // Items marked "TODO confirm" are placeholders carried over from the old template.
 
 const img = (id, w = 1200) =>
@@ -30,6 +30,7 @@ export const nav = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/schools', label: 'Our Schools' },
+  { to: '/gallery', label: 'Gallery' },
   { to: '/admissions', label: 'Admissions' },
   // Hidden for now. To bring it back, restore this line and the route in App.jsx:
   // { to: '/news', label: 'Events & News' },
@@ -44,10 +45,10 @@ export const hours = [
 
 export const home = {
   eyebrow: 'Hotoro, Kano · Since 1987',
-  title: 'Empowering the community through knowledge and faith',
+  title: ['Rooted in faith.', 'Ready for', 'the world.'],
   intro:
     'Holistic education from Nursery through Secondary School, in a nurturing environment that builds academic excellence and sound moral values.',
-  // TODO: replace with a real Attarbiyah photo. 4:5 portrait works best in the arch frame.
+  // TODO: replace with a real Attarbiyah photo. A portrait works best in the hero frame.
   image:
     'https://images.unsplash.com/photo-1774870292182-d59afbebf09e?auto=format&fit=crop&crop=focalpoint&fp-x=0.53&fp-y=0.5&w=1100&h=1375&q=75',
   imageAlt: 'A young pupil in a blue hijab school uniform among her classmates',
@@ -114,34 +115,54 @@ export const about = {
 
 export const schools = [
   {
+    id: 'islamiyya',
     icon: 'BookOpen',
     name: 'Islamiyya School',
+    focus: 'Faith & understanding',
+    subjects: ['Qur’an', 'Arabic', 'Hadith', 'Fiqh'],
     text: 'Qur’an, Arabic, Hadith and Fiqh for children, taught with patience and care.',
     image: img('1609599006353-e629aaabfeae'),
+    imageAlt: 'A Qur’an photographed in warm light',
   },
   {
+    id: 'adult-education',
     icon: 'Users',
     name: 'Adult Education',
+    focus: 'Learning at every age',
+    subjects: ['Literacy', 'Islamic studies'],
     text: 'Literacy and Islamic studies for adults who want to keep learning at any age.',
     image: img('1427504494785-3a9ca7044f45'),
+    imageAlt: 'A library with bookshelves and a quiet space for study',
   },
   {
+    id: 'nursery-primary',
     icon: 'Sprout',
     name: 'Islamic Nursery & Primary',
+    focus: 'The first foundations',
+    subjects: ['Early learning', 'National curriculum', 'Islamic values'],
     text: 'A strong early foundation that joins the national curriculum with Islamic values.',
-    image: img('1503676260728-1c00da094a0b'),
+    image: home.image,
+    imageAlt: home.imageAlt,
   },
   {
+    id: 'secondary',
     icon: 'GraduationCap',
     name: 'Secondary School',
+    focus: 'Ready for what comes next',
+    subjects: ['Junior Secondary', 'Senior Secondary', 'WAEC & NECO'],
     text: 'Junior and Senior Secondary, preparing students for WAEC, NECO and JAMB.',
     image: img('1580582932707-520aed937b7b'),
+    imageAlt: 'A bright classroom prepared for a day of learning',
   },
   {
+    id: 'quranic-boarding',
     icon: 'Moon',
     name: 'Qur’anic Boarding School',
+    focus: 'A life grounded in faith',
+    subjects: ['Qur’an memorisation', 'Formal study', 'Residential learning'],
     text: 'A focused residential setting for memorising the Qur’an alongside formal study.',
     image: img('1584551246679-0daf3d275d0f'),
+    imageAlt: 'Islamic architecture in soft natural light',
   },
 ];
 
@@ -212,10 +233,10 @@ export const news = [
 ];
 
 export const gallery = [
-  { caption: 'Graduation ceremony', image: img('1541339907198-e08756dedf3f', 800) },
-  { caption: 'Science exhibition', image: img('1588072432836-e10032774350', 800) },
-  { caption: 'Cultural day', image: img('1600494603989-9650cf6ddd3d', 800) },
-  { caption: 'Sports day', image: img('1434030216411-0b793f4b4173', 800) },
-  { caption: 'Debate competition', image: img('1523240795612-9a054b0db644', 800) },
-  { caption: 'Art exhibition', image: img('1541178735493-479c1a27ed24', 800) },
+  { id: 'possibility', caption: 'A world of possibility', category: 'Milestones', image: img('1541339907198-e08756dedf3f', 1400), alt: 'Graduates celebrating together beneath a sky of raised caps', text: 'Every new chapter begins with the courage to dream.' },
+  { id: 'curiosity', caption: 'Where curiosity takes root', category: 'Learning', image: img('1588072432836-e10032774350', 1000), alt: 'Young learners exploring a classroom together', text: 'Room to ask questions. Space to discover something new.' },
+  { id: 'together', caption: 'Better, together', category: 'Community', image: img('1523240795612-9a054b0db644', 1200), alt: 'A group of students sharing ideas around a table', text: 'The friendships and conversations that make learning richer.' },
+  { id: 'quiet', caption: 'Small steps. Lasting growth.', category: 'Learning', image: img('1434030216411-0b793f4b4173', 1000), alt: 'A learner taking handwritten notes beside an open book', text: 'There is something extraordinary in the everyday work of learning.' },
+  { id: 'belonging', caption: 'The joy of belonging', category: 'Community', image: home.image, alt: home.imageAlt, text: 'A community is built one connection at a time.' },
+  { id: 'beginnings', caption: 'Room for bright beginnings', category: 'Milestones', image: img('1580582932707-520aed937b7b', 1200), alt: 'A bright classroom prepared for a new day of learning', text: 'A strong foundation opens the door to a lifetime of possibility.' },
 ];

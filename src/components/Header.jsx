@@ -48,6 +48,22 @@ export default function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const menu = document.getElementById('mobile-menu');
+    const focusable = () => [menuBtn.current, ...menu.querySelectorAll('a[href]')];
+    const trapFocus = (event) => {
+      if (event.key !== 'Tab') return;
+      const items = focusable();
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    window.addEventListener('keydown', trapFocus);
+    return () => window.removeEventListener('keydown', trapFocus);
+  }, [open]);
+
   return (
     <>
       <header className={`header ${scrolled || open ? 'is-solid' : ''}`}>

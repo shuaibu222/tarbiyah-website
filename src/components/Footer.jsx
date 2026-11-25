@@ -17,6 +17,8 @@ export default function Footer() {
             <p className="footer__statement">{school.statement}</p>
           </div>
           <div className="footer__actions">
+            <p className="footer__invitation">Come and meet us.</p>
+            <p className="footer__welcome">A conversation is a good place to begin.</p>
             <a href={mapUrl} target="_blank" rel="noreferrer" className="footer__action">
               Get directions <ArrowUpRight size={18} aria-hidden="true" />
             </a>
@@ -77,7 +79,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="footer__wordmark" aria-hidden="true">{school.shortName}</p>
+      <div className="footer__signature">
+        <div className="container footer__signature-meta"><span>Hotoro, Kano</span><span>Knowledge & faith, since {school.founded}</span></div>
+        <p className="footer__wordmark" aria-hidden="true">{school.shortName}</p>
+      </div>
 
       <div className="container footer__bottom">
         <p>© {new Date().getFullYear()} {school.name}</p>

@@ -1,29 +1,30 @@
 /* ================= Tokens ================= */
 :root {
-  --green-950: #06251b;
-  --green-900: #0b3d2e;
+  --green-950: #092d25;
+  --green-900: #103e32;
   --green-800: #0f4d3a;
   --green-700: #17614a;
   --green-100: #e3eee8;
-  --gold: #d4a64a;
+  --gold: #dabb7e;
   --gold-soft: #f3e6c8;
-  --ivory: #faf7f0;
-  --sand: #f2ede2;
+  --ivory: #f8f7f2;
+  --sand: #efeee7;
   --ink: #14211c;
   --ink-soft: #4b5a54;
   --line: rgba(20, 33, 28, 0.1);
   --white: #fff;
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-signature: 'Fraunces', Georgia, serif;
 
-  --radius: 20px;
-  --radius-sm: 12px;
+  --radius: 32px;
+  --radius-sm: 18px;
   --container: 1200px;
   --gutter: clamp(16px, 4vw, 40px);
-  --section: clamp(72px, 10vw, 128px);
+  --section: clamp(80px, 11vw, 156px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --header-h: 76px;
+  --header-h: 92px;
 }
 
 /* ================= Base ================= */
@@ -101,11 +102,11 @@ figure, blockquote, dl, dd { margin: 0; }
   border-radius: 999px; border: 1px solid transparent;
   font: 600 0.95rem/1 var(--font-body);
   cursor: pointer; white-space: nowrap;
-  transition: transform 0.3s var(--ease), background 0.3s, color 0.3s, border-color 0.3s;
+  transition: none;
 }
-.btn:hover { transform: translateY(-2px); }
-.btn svg { transition: transform 0.3s var(--ease); }
-.btn:hover svg { transform: translateX(3px); }
+.btn:hover { transform: none; }
+.btn svg { transition: none; }
+.btn:hover svg { transform: none; }
 .btn--sm { min-height: 42px; padding: 0 20px; font-size: 0.88rem; }
 .btn--primary { background: var(--green-900); color: var(--white); }
 .btn--primary:hover { background: var(--green-700); }

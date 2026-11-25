@@ -1,8 +1,8 @@
-import { MapPin, Phone } from 'lucide-react';
+import { ArrowRight, MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero.jsx';
 import Section from '../components/Section.jsx';
 import Reveal from '../components/Reveal.jsx';
-import Icon from '../components/Icon.jsx';
 import CallToAction from '../components/CallToAction.jsx';
 import { schools, school, prettyPhone } from '../content.js';
 
@@ -13,26 +13,32 @@ export default function Schools() {
     <>
       <PageHero
         eyebrow="Our schools"
-        title="Five schools, one community"
+        title={<>Five schools.<br /><em>One community.</em></>}
         intro="Every stage of learning, from early childhood to adult education, on one campus in Hotoro, Kano."
       />
 
-      <Section>
-        <div className="school-cards">
+      <nav className="school-index" aria-label="Jump to a school"><div className="container">{schools.map((item, index) => <a key={item.id} href={`#${item.id}`}><span>0{index + 1}</span>{item.name}</a>)}</div></nav>
+
+      <section className="section school-collection" aria-label="Our five schools">
+        <div className="container">
           {schools.map((s, i) => (
-            <Reveal as="article" key={s.name} className="school-card" delay={(i % 2) * 80}>
-              <div className="school-card__media">
-                <img src={s.image} alt="" loading="lazy" />
+            <article key={s.id} id={s.id} className="school-chapter">
+              <Reveal className="school-chapter__media">
+                <img src={s.image} alt={s.imageAlt} loading="lazy" />
+              </Reveal>
+              <div className="school-chapter__body">
+                <span className="chapter-number" aria-hidden="true">0{i + 1}</span>
+                <p className="eyebrow">{s.focus}</p>
+                <h2>{s.name}</h2>
+                <p className="lead">{s.text}</p>
+                <ul className="school-chapter__subjects" aria-label="Areas of learning">{s.subjects.map((subject) => <li key={subject}>{subject}</li>)}</ul>
+                <Link to="/admissions" className="text-link">Ask about admission <ArrowRight size={17} aria-hidden="true" /></Link>
               </div>
-              <div className="school-card__body">
-                <span className="icon-chip"><Icon name={s.icon} /></span>
-                <h3>{s.name}</h3>
-                <p>{s.text}</p>
-              </div>
-            </Reveal>
+            </article>
           ))}
+          <p className="photography-note">Illustrative photography</p>
         </div>
-      </Section>
+      </section>
 
       <Section tone="soft" eyebrow="Visit us" title="Our campus">
         <Reveal className="campus">
